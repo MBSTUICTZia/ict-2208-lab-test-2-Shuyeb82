@@ -1,6 +1,6 @@
 package shapes;
 
-// abstract base class for all shapes
+
 public abstract class Shape {
 
     private String color;
