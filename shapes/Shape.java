@@ -1,4 +1,6 @@
+package shapes;
 
+// abstract base class for all shapes
 public abstract class Shape {
 
     private String color;
@@ -9,9 +11,20 @@ public abstract class Shape {
         this.filled = filled;
     }
 
+    // every shape must give its own area and perimeter
     public abstract double getArea();
-
     public abstract double getPerimeter();
+
+    @Override
+    public String toString() {
+        String f;
+        if (filled) {
+            f = "Yes";
+        } else {
+            f = "No";
+        }
+        return "Color : "+color+"\n"+"Filled: " + f;
+    }
 
     public String getColor() {
         return color;
@@ -21,17 +34,11 @@ public abstract class Shape {
         return filled;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor(String c) {
+        this.color = c;
     }
 
-    public void setFilled(boolean filled) {
-        this.filled = filled;
-    }
-
-    @Override
-    public String toString() {
-        return "Color : " + color + "\n" +
-               "Filled: " + (filled ? "Yes" : "No");
+    public void setFilled(boolean f) {
+        this.filled = f;
     }
 }
